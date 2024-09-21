@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Login Disini Guys</title>
+
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1671895574612-3acabfb5334f?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+    </style>
+
+    <style>
+        /* Style untuk elemen input */
+        
+        .inputtext {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ca16a3;
+            font-size: 16px;
+            color: #06880c;
+            box-sizing: border-box;
+        }
+        /* Style untuk tombol login */
+        
+        .tombol {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #e911a1;
+            color: #19cf08;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        /* Style untuk kotak login */
+        
+        .login-box {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #aa2d2d;
+            border-radius: 20px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+        /* Style untuk logo */
+        
+        .logo {
+            display: block;
+            margin: 0 auto 30px;
+            width: 150px;
+            height: auto;
+        }
+        
+        #timer {
+            color: red;
+        }
+        
+        body {
+            overflow-y: hidden;
+            /* Hide vertical scrollbar */
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <img class="logo" src="img/IMG-20240716-WA0016.jpg" alt="Logo">
+
+        <form>
+
+            <input type="text" name="username" placeholder="Username" class="inputtext">
+
+            <input type="password" name="password" placeholder="Password" class="inputtext">
+
+            <div id="timer"></div>
+
+            <input type="button" value="Login" class="tombol" onclick="login()">
+
+        </form>
+
+    </div>
+
+    <script>
+        function login() {
+
+            var username = document.getElementsByName("username")[0].value;
+
+            var password = document.getElementsByName("password")[0].value;
+
+            var errorMessage = document.querySelector(".error-message");
+
+            // Pasangan username dan password yang disimpan dalam array
+
+            var usernames = ["user1", "user2"];
+
+            var passwords = ["pass1", "pass2"];
+
+            var isMatch = false;
+
+            // Perulangan untuk memeriksa apakah username dan password yang dimasukkan sesuai dengan salah satu dari pasangan username dan password yang disimpan dalam array
+
+            for (var i = 0; i < usernames.length; i++) {
+
+                if (username == usernames[i] && password == passwords[i]) {
+
+                    isMatch = true;
+
+                    break;
+
+                }
+
+            }
+
+            if (isMatch) {
+
+                window.open('https://sites.google.com/view/websitebugukgona/home/home', '_blank');
+
+            } else {
+
+                document.getElementById("timer").innerHTML = "Username atau Password yang dimasukan salah";
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
